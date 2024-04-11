@@ -1,3 +1,10 @@
+/*
+* File:lab 9
+* Author: joe roberts
+* Date: 4/4/2024
+*
+* Description: arrays
+*/
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -31,19 +38,14 @@ int main() {
         }
     }
     cout << endl;
-
-    // Sort even and odd arrays
-    sort(evenNumbers, evenNumbers + evenCount);
-    sort(oddNumbers, oddNumbers + oddCount);
-    cout << "Even numbers first: "; 
-    // Merge the two arrays
-    for (int i = 0; i < evenCount; ++i) {
-        cout << evenNumbers[i] << " ";
-    }
-    for (int i = 0; i < oddCount; ++i) {
-        cout << oddNumbers[i] << " ";
+    // Print every even-indexed element in the array
+    cout << "Even-indexed numbers: ";
+    for (int i = 0; i < 10; i += 2) {
+        cout << randomIntegers[i] << " ";
     }
     cout << endl;
 
     return 0;
 }
+
+  
