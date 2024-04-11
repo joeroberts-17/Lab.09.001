@@ -8,12 +8,26 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <algorithm> // For std::sort
+#include <algorithm> /
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <algorithm> 
 using namespace std;
 
 // Initialize arrays to store even and odd numbers
 int evenNumbers[10], oddNumbers[10];
 int evenCount = 0, oddCount = 0;
+
+// Function to reverse the order of an array
+void reverseNumbers(int arr[], int size) {
+    for (int i = 0; i < size / 2; ++i) {
+        int temp = arr[i];
+        arr[i] = arr[size - i - 1];
+        arr[size - i - 1] = temp;
+    }
+}
+
 int main() {
     // Seed the random number generator
     srand(time(nullptr));
@@ -43,11 +57,19 @@ int main() {
     cout << endl;
 
     // Extract even numbers from even-indexed positions
-    cout << "Even numbers from even indexes: ";
+    cout << "Even values from even indexes: ";
     for (int i = 0; i < 10; i += 2) {
         if (randomIntegers[i] % 2 == 0) {
             cout << randomIntegers[i] << " ";
         }
+    }
+    cout << endl;
+
+    // Reverse the order of the random numbers
+    cout << "Reversed order of random numbers: ";
+    reverseNumbers(randomIntegers, 10);
+    for (int i = 0; i < 10; ++i) {
+        cout << randomIntegers[i] << " ";
     }
     cout << endl;
 
