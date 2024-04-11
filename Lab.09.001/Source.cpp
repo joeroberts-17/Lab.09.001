@@ -13,6 +13,10 @@
 #include <cstdlib>
 #include <ctime>
 #include <algorithm> 
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <algorithm> 
 using namespace std;
 
 // Initialize arrays to store even and odd numbers
@@ -28,6 +32,12 @@ void reverseNumbers(int arr[], int size) {
     }
 }
 
+// Function to print the first and last numbers from the first 10 numbers generated
+void printFirstAndLastFirstTen(int arr[]) {
+    cout << "First and last numbers: " << arr[9] <<" " << arr[0] << endl;
+   
+}
+
 int main() {
     // Seed the random number generator
     srand(time(nullptr));
@@ -38,6 +48,7 @@ int main() {
     for (int i = 0; i < 10; ++i) {
         randomIntegers[i] = rand() % 9000 + 1000; // Generate a random integer between 1000 and 9999
     }
+
     // Print every element in order of appearance in the array
     for (int i = 0; i < 10; ++i) {
         cout << randomIntegers[i] << " ";
@@ -57,7 +68,7 @@ int main() {
     cout << endl;
 
     // Extract even numbers from even-indexed positions
-    cout << "Even values from even indexes: ";
+    cout << "Even numbers from even indexes: ";
     for (int i = 0; i < 10; i += 2) {
         if (randomIntegers[i] % 2 == 0) {
             cout << randomIntegers[i] << " ";
@@ -73,5 +84,10 @@ int main() {
     }
     cout << endl;
 
+    // Print the first and last numbers from the first 10 generated numbers
+    printFirstAndLastFirstTen(randomIntegers);
+
     return 0;
 }
+
+
