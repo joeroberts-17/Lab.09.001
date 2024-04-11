@@ -14,11 +14,9 @@ using namespace std;
 // Initialize arrays to store even and odd numbers
 int evenNumbers[10], oddNumbers[10];
 int evenCount = 0, oddCount = 0;
-
 int main() {
     // Seed the random number generator
     srand(time(nullptr));
-
     // Initialize an array to store 10 4-digit random integers
     int randomIntegers[10];
     cout << "10 random 4 digit numbers: ";
@@ -26,7 +24,6 @@ int main() {
     for (int i = 0; i < 10; ++i) {
         randomIntegers[i] = rand() % 9000 + 1000; // Generate a random integer between 1000 and 9999
     }
-
     // Print every element in order of appearance in the array
     for (int i = 0; i < 10; ++i) {
         cout << randomIntegers[i] << " ";
@@ -45,7 +42,14 @@ int main() {
     }
     cout << endl;
 
+    // Extract even numbers from even-indexed positions
+    cout << "Even numbers from even indexes: ";
+    for (int i = 0; i < 10; i += 2) {
+        if (randomIntegers[i] % 2 == 0) {
+            cout << randomIntegers[i] << " ";
+        }
+    }
+    cout << endl;
+
     return 0;
 }
-
-  
